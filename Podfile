@@ -6,9 +6,7 @@ target 'NYTimes Articles' do
   use_frameworks!
 
   # Pods for NYTimes Articles
-  pod 'Alamofire'
   pod 'Moya'
-  pod 'ObjectMapper'
   pod 'ReachabilitySwift'
   pod 'Kingfisher'
 end
