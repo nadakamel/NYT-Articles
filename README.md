@@ -3,8 +3,7 @@ A simple app to hit the NY Times Most Popular Articles API and show a list of ar
 
 ## Base Tooling
 
-- `Alamofire` + `Moya` for networking.
-- `ObjectMapper` for JSON Object mapping.
+- `Moya` using Alamofire for networking.
 - `ReachabilitySwift` for internet connection handling.
 - `Kingfisher` for downloading and caching images from the web.
 
