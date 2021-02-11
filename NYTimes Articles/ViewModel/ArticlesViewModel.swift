@@ -1,17 +1,15 @@
 //
-//  ViewModel.swift
+//  ArticlesViewModel.swift
 //  NYTimes Articles
 //
 //  Created by Nada Kamel on 10/02/2021.
 //
 
-import Foundation
-
 protocol ViewModelProtocol: class {
     func didUpdatePopularArticles()
 }
 
-class ViewModel {
+class ArticlesViewModel {
     weak var delegate: ViewModelProtocol?
     
     fileprivate(set) var popularArticles: [Article] = []
@@ -22,7 +20,7 @@ class ViewModel {
         self.networkManager = networkManager
     }
     
-    func loadPopularMovies(period: Int) {
+    func loadPopularArticles(period: Int) {
         networkManager.fetchPopularArticles(period: period, completion: { [weak self] result in
             guard let strongSelf = self else { return }
             switch result {

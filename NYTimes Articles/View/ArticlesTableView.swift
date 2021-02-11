@@ -1,5 +1,5 @@
 //
-//  ArticlesDataSource.swift
+//  ArticlesTableView.swift
 //  NYTimes Articles
 //
 //  Created by Nada Kamel on 11/02/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ArticlesViewController: UITableViewDelegate, UITableViewDataSource {
+extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -27,6 +27,12 @@ extension ArticlesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.contentView.backgroundColor = UIColor.darkGray
+        }
     }
     
 }

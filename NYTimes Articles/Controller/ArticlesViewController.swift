@@ -9,7 +9,7 @@ import UIKit
 
 class ArticlesViewController: UIViewController {
 
-    let viewModel = ViewModel()
+    let viewModel = ArticlesViewModel()
     private var period = 1
     static let segmentedControlItems = ["1 day", "7 days", "30 days"]
     
@@ -78,13 +78,27 @@ class ArticlesViewController: UIViewController {
         setupUI()
     }
     
+    fileprivate func setNavigationTitleView() {
+        let navLabel = UILabel()
+        let navTitle = NSMutableAttributedString(string: "NY Times ", attributes:[
+                                                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18.0),
+                                                    NSAttributedString.Key.foregroundColor: UIColor.white])
+        navTitle.append(NSMutableAttributedString(string: "Most Popular Articles", attributes:[
+                                                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17.0, weight: UIFont.Weight.light),
+                                                    NSAttributedString.Key.foregroundColor: UIColor.white]))
+        navLabel.attributedText = navTitle
+        self.navigationItem.titleView = navLabel
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationTitleView()
+        
         articlesTableView.delegate = self
         articlesTableView.dataSource = self
         
         viewModel.delegate = self
-        viewModel.loadPopularMovies(period: period)
+        viewModel.loadPopularArticles(period: period)
     }
 
     @objc private func segmentedValueChanged(_ sender: UISegmentedControl) {
@@ -96,7 +110,7 @@ class ArticlesViewController: UIViewController {
         default:
             period = 30
         }
-        viewModel.loadPopularMovies(period: period)
+        viewModel.loadPopularArticles(period: period)
     }
 
 }

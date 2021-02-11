@@ -22,7 +22,7 @@ class ArticlesTableViewCell: UITableViewCell {
         contentImageView.translatesAutoresizingMaskIntoConstraints = false
         contentImageView.layer.cornerRadius = 6
         contentImageView.layer.masksToBounds = true
-        contentImageView.contentMode = .scaleAspectFill
+        contentImageView.contentMode = .scaleToFill
         contentImageView.clipsToBounds = true
         return contentImageView
     }()
@@ -30,7 +30,7 @@ class ArticlesTableViewCell: UITableViewCell {
     fileprivate lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .light)
         titleLabel.textColor = .white
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.backgroundColor = .clear
@@ -51,7 +51,6 @@ class ArticlesTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        selectionStyle = .none
         setupViews()
     }
     
@@ -87,7 +86,7 @@ class ArticlesTableViewCell: UITableViewCell {
     
     fileprivate func setupViews() {
         contentImageView.frame.size = CGSize(width: self.frame.width, height: 140)
-        contentImageView.backgroundColor = .systemGray
+        contentImageView.backgroundColor = .lightGray
         contentView.addSubview(contentImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
@@ -98,6 +97,8 @@ class ArticlesTableViewCell: UITableViewCell {
         if let media = article.media, media.count > 0 {
             let urlPath = media[0].mediaMetadata[2].url
             contentImageView.kf.setImage(with: URL(string: urlPath))
+        } else {
+            contentImageView.image = UIImage(named: "placeholder")
         }
         titleLabel.text = article.title
         descriptionLabel.text = article.abstract
