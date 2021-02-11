@@ -83,7 +83,7 @@
 			children = (
 				89736B8425D4385D00847E6B /* Info.plist */,
 				89736B7625D4385B00847E6B /* AppDelegate.swift */,
-				89736B7A25D4385B00847E6B /* ArticlesViewController.swift */,
+				89736BF325D4C82800847E6B /* Controller */,
 				89736BDA25D4979300847E6B /* View */,
 				89736BB825D4693100847E6B /* ViewModel */,
 				89736BB125D4647D00847E6B /* Model */,
@@ -151,6 +151,14 @@
 				89736BDC25D4A32900847E6B /* ArticlesTableView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		89736BF325D4C82800847E6B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				89736B7A25D4385B00847E6B /* ArticlesViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		DFBC7AAA76159A2E2BA39646 /* Pods */ = {
