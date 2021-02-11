@@ -83,6 +83,7 @@ enum Format: String, Codable {
 }
 
 enum Subtype: String, Codable {
+    case empty = ""
     case photo = "photo"
 }
 
@@ -96,4 +97,5 @@ enum Source: String, Codable {
 
 enum ResultType: String, Codable {
     case article = "Article"
+    case interactive = "Interactive"
 }

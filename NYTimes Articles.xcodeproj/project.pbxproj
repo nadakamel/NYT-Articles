@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D3D79A99A55F7A246FF460F /* Pods_NYTimes_Articles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777B13131AF232CC1EA0092D /* Pods_NYTimes_Articles.framework */; };
 		89736B7725D4385B00847E6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89736B7625D4385B00847E6B /* AppDelegate.swift */; };
-		89736B7B25D4385B00847E6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89736B7A25D4385B00847E6B /* ViewController.swift */; };
+		89736B7B25D4385B00847E6B /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89736B7A25D4385B00847E6B /* ArticlesViewController.swift */; };
 		89736B7E25D4385B00847E6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89736B7C25D4385B00847E6B /* Main.storyboard */; };
 		89736B8025D4385D00847E6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89736B7F25D4385D00847E6B /* Assets.xcassets */; };
 		89736B8325D4385D00847E6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89736B8125D4385D00847E6B /* LaunchScreen.storyboard */; };
@@ -17,6 +17,8 @@
 		89736BAA25D4511A00847E6B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89736BA925D4511A00847E6B /* NetworkManager.swift */; };
 		89736BB625D4663800847E6B /* MostPopularArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89736BB525D4663800847E6B /* MostPopularArticles.swift */; };
 		89736BBA25D4696700847E6B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89736BB925D4696700847E6B /* ViewModel.swift */; };
+		89736BD825D4978D00847E6B /* ArticlesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89736BD725D4978D00847E6B /* ArticlesTableViewCell.swift */; };
+		89736BDD25D4A32900847E6B /* ArticlesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89736BDC25D4A32900847E6B /* ArticlesTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,7 @@
 		777B13131AF232CC1EA0092D /* Pods_NYTimes_Articles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTimes_Articles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89736B7325D4385B00847E6B /* NYTimes Articles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYTimes Articles.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89736B7625D4385B00847E6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89736B7A25D4385B00847E6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		89736B7A25D4385B00847E6B /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		89736B7D25D4385B00847E6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89736B7F25D4385D00847E6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89736B8225D4385D00847E6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		89736BA925D4511A00847E6B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		89736BB525D4663800847E6B /* MostPopularArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularArticles.swift; sourceTree = "<group>"; };
 		89736BB925D4696700847E6B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		89736BD725D4978D00847E6B /* ArticlesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewCell.swift; sourceTree = "<group>"; };
+		89736BDC25D4A32900847E6B /* ArticlesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,8 @@
 			children = (
 				89736B8425D4385D00847E6B /* Info.plist */,
 				89736B7625D4385B00847E6B /* AppDelegate.swift */,
-				89736B7A25D4385B00847E6B /* ViewController.swift */,
+				89736B7A25D4385B00847E6B /* ArticlesViewController.swift */,
+				89736BDA25D4979300847E6B /* View */,
 				89736BB825D4693100847E6B /* ViewModel */,
 				89736BB125D4647D00847E6B /* Model */,
 				89736BA725D44C1C00847E6B /* Networking */,
@@ -137,6 +142,15 @@
 				89736BB925D4696700847E6B /* ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		89736BDA25D4979300847E6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89736BD725D4978D00847E6B /* ArticlesTableViewCell.swift */,
+				89736BDC25D4A32900847E6B /* ArticlesTableView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DFBC7AAA76159A2E2BA39646 /* Pods */ = {
@@ -263,9 +277,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				89736BB625D4663800847E6B /* MostPopularArticles.swift in Sources */,
-				89736B7B25D4385B00847E6B /* ViewController.swift in Sources */,
+				89736BD825D4978D00847E6B /* ArticlesTableViewCell.swift in Sources */,
+				89736B7B25D4385B00847E6B /* ArticlesViewController.swift in Sources */,
 				89736BA525D44C1800847E6B /* APIEndpoints.swift in Sources */,
 				89736BAA25D4511A00847E6B /* NetworkManager.swift in Sources */,
+				89736BDD25D4A32900847E6B /* ArticlesTableView.swift in Sources */,
 				89736B7725D4385B00847E6B /* AppDelegate.swift in Sources */,
 				89736BBA25D4696700847E6B /* ViewModel.swift in Sources */,
 			);
