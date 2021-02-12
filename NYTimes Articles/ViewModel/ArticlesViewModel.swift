@@ -5,12 +5,12 @@
 //  Created by Nada Kamel on 10/02/2021.
 //
 
-protocol ViewModelProtocol: class {
+protocol ArticlesViewModelProtocol: class {
     func didUpdatePopularArticles()
 }
 
 class ArticlesViewModel {
-    weak var delegate: ViewModelProtocol?
+    weak var delegate: ArticlesViewModelProtocol?
     
     fileprivate(set) var popularArticles: [Article] = []
     
@@ -34,5 +34,6 @@ class ArticlesViewModel {
             }
         })
     }
+    
     
 }

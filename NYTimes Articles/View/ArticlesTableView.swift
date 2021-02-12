@@ -30,9 +30,9 @@ extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) {
-            cell.contentView.backgroundColor = UIColor.darkGray
-        }
+        tableView.deselectRow(at: indexPath, animated: true)
+        let viewController = ArticleDetailsViewController(with: viewModel.popularArticles[indexPath.row])
+        navigationController?.pushViewController(viewController, animated: false)
     }
     
 }
