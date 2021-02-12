@@ -23,6 +23,7 @@
 		89736C1625D56FA100847E6B /* ArticlesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89736C1525D56FA100847E6B /* ArticlesViewModelTests.swift */; };
 		89736C1C25D6B39F00847E6B /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89736C1B25D6B39F00847E6B /* ArticleDetailsViewController.swift */; };
 		89736C2025D6B3ED00847E6B /* MostPopularArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89736C1F25D6B3ED00847E6B /* MostPopularArticlesView.swift */; };
+		89736C2725D6F2C500847E6B /* ArticleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89736C2625D6F2C500847E6B /* ArticleDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		89736C1525D56FA100847E6B /* ArticlesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModelTests.swift; sourceTree = "<group>"; };
 		89736C1B25D6B39F00847E6B /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
 		89736C1F25D6B3ED00847E6B /* MostPopularArticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularArticlesView.swift; sourceTree = "<group>"; };
+		89736C2625D6F2C500847E6B /* ArticleDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				89736BD725D4978D00847E6B /* ArticlesTableViewCell.swift */,
 				89736BDC25D4A32900847E6B /* ArticlesTableView.swift */,
 				89736C1F25D6B3ED00847E6B /* MostPopularArticlesView.swift */,
+				89736C2625D6F2C500847E6B /* ArticleDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				89736BDD25D4A32900847E6B /* ArticlesTableView.swift in Sources */,
 				89736C2025D6B3ED00847E6B /* MostPopularArticlesView.swift in Sources */,
 				89736B7725D4385B00847E6B /* AppDelegate.swift in Sources */,
+				89736C2725D6F2C500847E6B /* ArticleDetailsView.swift in Sources */,
 				89736BBA25D4696700847E6B /* ArticlesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
