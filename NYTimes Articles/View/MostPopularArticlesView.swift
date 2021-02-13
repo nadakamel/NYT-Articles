@@ -15,6 +15,8 @@ class MostPopularArticlesView: UIView {
 
     weak var delegate: MostPopularArticlesViewDelegate?
     
+    var selectedPeriod: Int = 1
+    
     static private let segmentedControlItems = ["1 day", "7 days", "30 days"]
     
     fileprivate let segmentedControlView: UIView = {
@@ -42,6 +44,19 @@ class MostPopularArticlesView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    lazy var emptyTableViewLabel: UILabel = {
+        let label = UILabel(frame: articlesTableView.frame)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 16.0)
+        label.textColor = UIColor.darkGray
+        label.text = "No articles found"
+        return label
+    }()
+    
+    let refreshControl = UIRefreshControl()
     
     let spinner = UIActivityIndicatorView(style: .whiteLarge)
     
@@ -78,9 +93,15 @@ class MostPopularArticlesView: UIView {
         setupViewsConstraints()
     }
 
+    @objc private func refreshData(_ sender: Any) {
+        delegate?.loadPopularArticles(withPeriod: selectedPeriod)
+    }
+    
     private func setupTableView() {
         articlesTableView.register(ArticlesTableViewCell.self,
                                    forCellReuseIdentifier: ArticlesTableViewCell.identifier)
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        articlesTableView.addSubview(refreshControl)
     }
     
     private func setupSpinner() {
@@ -106,12 +127,13 @@ class MostPopularArticlesView: UIView {
     @objc private func segmentedValueChanged(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            delegate?.loadPopularArticles(withPeriod: 1)
+            selectedPeriod = 1
         case 1:
-            delegate?.loadPopularArticles(withPeriod: 7)
+            selectedPeriod = 7
         default:
-            delegate?.loadPopularArticles(withPeriod: 30)
+            selectedPeriod = 30
         }
+        delegate?.loadPopularArticles(withPeriod: selectedPeriod)
     }
     
     

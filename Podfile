@@ -7,6 +7,5 @@ target 'NYTimes Articles' do
 
   # Pods for NYTimes Articles
   pod 'Moya'
-  pod 'ReachabilitySwift'
   pod 'Kingfisher'
 end

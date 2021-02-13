@@ -55,18 +55,32 @@ class ArticlesViewController: UIViewController {
         viewModel.loadPopularArticles(period: period)
     }
     
+    func showAlert(title: String?, message: String? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     
 }
 
 extension ArticlesViewController: MostPopularArticlesViewDelegate {
     func loadPopularArticles(withPeriod period: Int) {
+        _view.refreshControl.endRefreshing()
         viewModel.loadPopularArticles(period: period)
     }
 }
 
 extension ArticlesViewController: ArticlesViewModelProtocol {
-    func didUpdatePopularArticles() {
-        _view.articlesTableView.backgroundView = nil
+    func didUpdatePopularArticles(withStatus status: Status) {
+        switch status {
+        case .failure(let error):
+            _view.emptyTableViewLabel.text = error
+            _view.articlesTableView.backgroundView = _view.emptyTableViewLabel
+            showAlert(title: error)
+        default:
+            _view.articlesTableView.backgroundView = nil
+        }
         _view.articlesTableView.reloadData()
     }
 }

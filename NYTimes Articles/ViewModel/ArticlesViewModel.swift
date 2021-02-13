@@ -5,8 +5,13 @@
 //  Created by Nada Kamel on 10/02/2021.
 //
 
+enum Status {
+    case success
+    case failure(error: String)
+}
+
 protocol ArticlesViewModelProtocol: class {
-    func didUpdatePopularArticles()
+    func didUpdatePopularArticles(withStatus status: Status)
 }
 
 class ArticlesViewModel {
@@ -27,10 +32,10 @@ class ArticlesViewModel {
             case .success(let popularArticlesResponse):
                 if let popularArticles = popularArticlesResponse.results {
                     strongSelf.popularArticles = popularArticles
-                    strongSelf.delegate?.didUpdatePopularArticles()
+                    strongSelf.delegate?.didUpdatePopularArticles(withStatus: .success)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                strongSelf.delegate?.didUpdatePopularArticles(withStatus: .failure(error: error.localizedDescription))
             }
         })
     }
