@@ -3,7 +3,7 @@ A simple app to hit the NY Times Most Popular Articles API and show a list of ar
 
 ## Base Tooling
 
-- `Moya` using Alamofire for networking.
+- `Moya` based on `Alamofire` for networking.
 - `ReachabilitySwift` for internet connection handling.
 - `Kingfisher` for downloading and caching images from the web.
 
