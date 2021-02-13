@@ -14,7 +14,7 @@ class ArticlesViewModel {
     
     fileprivate(set) var popularArticles: [Article] = []
     
-    private let networkManager: NetworkManager
+    let networkManager: NetworkManager
     
     init(networkManager: NetworkManager = NetworkManager()) {
         self.networkManager = networkManager

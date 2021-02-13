@@ -7,26 +7,44 @@
 
 import XCTest
 
+@testable import NYTimes_Articles
+
 class NYTimesArticlesTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var network: NetworkManager!
+    var viewModel: ArticlesViewModel!
+    
+    override func setUp() {
+        super.setUp()
+        network = NetworkManager()
+        viewModel = ArticlesViewModel(networkManager: network)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        network = nil
+        viewModel = nil
+        super.tearDown()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testViewModelInitialisation() {
+        XCTAssertNotNil(viewModel, "The articles view model should not be nil.")
+        XCTAssertTrue(viewModel.networkManager === network, "The networkManager should be equal to the network that was passed in.")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testSuccessfulMostPopularArticlesAPIRequest() {
+        network.fetchPopularArticles(period: 1, completion: { result in
+            switch result {
+            case .success(let popularArticlesResponse):
+                if let articles = popularArticlesResponse.results, articles.count > 0 {
+                    let article: Article = articles[0]
+                    XCTAssertEqual(article.source?.rawValue, "New York Times")
+                }
+            case .failure:
+                XCTFail()
+                return
+            }
+        })
     }
+    
 
 }
