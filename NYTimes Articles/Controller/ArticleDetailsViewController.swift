@@ -11,6 +11,8 @@ class ArticleDetailsViewController: UIViewController {
 
     var article: Article?
     
+    let _view = ArticleDetailsView()
+    
     init(with article: Article) {
         self.article = article
         super.init(nibName: nil, bundle: nil)
@@ -24,18 +26,21 @@ class ArticleDetailsViewController: UIViewController {
         debugPrint("deallocated: \(self)")
     }
     
-    private func setupUI() {
-        
-    }
-    
     override func loadView() {
         super.loadView()
-        setupUI()
+        _view.updateViews(withArticle: article)
+        view = _view
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(article?.title ?? "")
+        let navLabel = UILabel()
+        let navTitle = NSMutableAttributedString(string: article?.source?.rawValue ?? "", attributes:[
+                                                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20.0, weight: UIFont.Weight.light),
+                                                    NSAttributedString.Key.foregroundColor: UIColor.white])
+        navLabel.attributedText = navTitle
+        self.navigationItem.titleView = navLabel
     }
+    
     
 }

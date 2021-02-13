@@ -30,23 +30,12 @@ class ArticlesTableViewCell: UITableViewCell {
     fileprivate lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .light)
+        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
         titleLabel.textColor = .white
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.backgroundColor = .clear
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
-    }()
-    
-    fileprivate lazy var descriptionLabel: UILabel = {
-        let descriptionLabel = UILabel()
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
-        descriptionLabel.textColor = .white
-        descriptionLabel.lineBreakMode = .byWordWrapping
-        descriptionLabel.backgroundColor = .clear
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        return descriptionLabel
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -71,16 +60,11 @@ class ArticlesTableViewCell: UITableViewCell {
             contentImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -13),
             contentImageView.heightAnchor.constraint(equalToConstant: 140),
             
-            titleLabel.topAnchor.constraint(equalTo: contentImageView.bottomAnchor, constant: 7),
+            titleLabel.topAnchor.constraint(equalTo: contentImageView.bottomAnchor, constant: 5),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 13),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -13),
-            titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 1),
-            
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 7),
-            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 13),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -13),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
-            descriptionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 1)
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 1)
         ])
     }
     
@@ -89,7 +73,6 @@ class ArticlesTableViewCell: UITableViewCell {
         contentImageView.backgroundColor = .lightGray
         contentView.addSubview(contentImageView)
         contentView.addSubview(titleLabel)
-        contentView.addSubview(descriptionLabel)
         setupConstraints()
     }
     
@@ -101,7 +84,6 @@ class ArticlesTableViewCell: UITableViewCell {
             contentImageView.image = UIImage(named: "placeholder")
         }
         titleLabel.text = article.title
-        descriptionLabel.text = article.abstract
     }
 
 }

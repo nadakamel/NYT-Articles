@@ -17,7 +17,7 @@ class MostPopularArticlesView: UIView {
     
     static private let segmentedControlItems = ["1 day", "7 days", "30 days"]
     
-    private let segmentedControlView: UIView = {
+    fileprivate let segmentedControlView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +45,7 @@ class MostPopularArticlesView: UIView {
     
     let spinner = UIActivityIndicatorView(style: .whiteLarge)
     
-    override init(frame: CGRect){
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }

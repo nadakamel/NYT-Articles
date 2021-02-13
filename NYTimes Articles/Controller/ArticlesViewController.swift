@@ -34,10 +34,10 @@ class ArticlesViewController: UIViewController {
     fileprivate func setNavigationTitleView() {
         let navLabel = UILabel()
         let navTitle = NSMutableAttributedString(string: "NY Times ", attributes:[
-                                                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18.0),
+                                                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 22.0),
                                                     NSAttributedString.Key.foregroundColor: UIColor.white])
         navTitle.append(NSMutableAttributedString(string: "Most Popular Articles", attributes:[
-                                                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17.0, weight: UIFont.Weight.light),
+                                                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20.0, weight: UIFont.Weight.light),
                                                     NSAttributedString.Key.foregroundColor: UIColor.white]))
         navLabel.attributedText = navTitle
         self.navigationItem.titleView = navLabel
