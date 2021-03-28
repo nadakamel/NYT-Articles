@@ -34,3 +34,12 @@ Model-View-ViewModel (MVVM) architecture
 - Xcode Version 12.2
 - iOS 12 or later
 - iPhone 5s or later
+
+## Screenshots
+Shows a list of articles from 1 day ago, and details of an article gets displayed when tapped.
+
+<img src="https://github.com/nadakamel/NYT-Articles/blob/main/Screenshots/HomeScreen-1.png" width="300" height="650"> <img src="https://github.com/nadakamel/NYT-Articles/blob/main/Screenshots/Details%20Screen.png" width="300" height="650">
+
+Also you can check articles from a week ago or 30 days ago.
+
+<img src="https://github.com/nadakamel/NYT-Articles/blob/main/Screenshots/HomeScreen-2.png" width="300" height="650"> <img src="https://github.com/nadakamel/NYT-Articles/blob/main/Screenshots/HomeScreen-3.png" width="300" height="650">
